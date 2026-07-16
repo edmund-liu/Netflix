@@ -1,6 +1,18 @@
-# Netflix Mobile (Clone)
+# Netflix Clone — Mobile + Web
 
-A Netflix-style mobile app built with **Expo / React Native (TypeScript)** for iOS and Android.
+A Netflix-style **mobile app** (Expo / React Native, iOS + Android) at the repo root, and a companion **web app** styled after netflix.com (Vite + React) in [`web/`](web/README.md). Both share the same catalog, Google sign-in, and in-app-only offline downloads.
+
+## Web app quick start
+
+```bash
+cd web
+npm install
+npm run dev        # netflix.com-style UI at http://localhost:5173
+```
+
+See [`web/README.md`](web/README.md) for details.
+
+# Mobile app (Expo / React Native)
 
 ## Features
 
