@@ -17,6 +17,18 @@ npm run dev      # http://localhost:5173
 npm run build    # production build in dist/
 ```
 
+## Deploying to Vercel
+
+The repo is pre-configured for Vercel — both a root-level `vercel.json` (so you can import the whole repo as-is) and a `web/vercel.json` (if you prefer setting **Root Directory** to `web`) are included, with the SPA rewrite needed for client-side routes like `/downloads`.
+
+1. Push this repo to GitHub and [import it in Vercel](https://vercel.com/new) — no settings need changing; the root `vercel.json` builds `web/` automatically.
+   (CLI alternative: `npm i -g vercel && vercel` from the repo root.)
+2. In the Vercel project settings → **Environment Variables**, add
+   `VITE_GOOGLE_CLIENT_ID` = your Google OAuth web client ID, then redeploy.
+3. In the Google Cloud Console, add your Vercel URL (e.g. `https://your-app.vercel.app`) to the OAuth client's **Authorized JavaScript origins** — Google sign-in only works on origins listed there.
+
+Without step 2–3 the deployed site still works fully via the demo account.
+
 ## Configuring Google Sign-In
 
 1. In the [Google Cloud Console](https://console.cloud.google.com/) create an **OAuth Web application** client ID, adding your origins (e.g. `http://localhost:5173`) to *Authorized JavaScript origins*.
